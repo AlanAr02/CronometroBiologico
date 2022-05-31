@@ -9,8 +9,8 @@ public class Consultas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date fechaCreacion;
-    private Date fechaTurno;
+    private String fechaCreacion;
+    private String fechaTurno;
     private String descripcion;
     @ManyToOne
     private Medico medico;
@@ -52,19 +52,19 @@ public class Consultas {
         this.id = id;
     }
 
-    public Date getFechaCreacion() {
+    public String getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public Date getFechaTurno() {
+    public String getFechaTurno() {
         return fechaTurno;
     }
 
-    public void setFechaTurno(Date fechaTurno) {
+    public void setFechaTurno(String fechaTurno) {
         this.fechaTurno = fechaTurno;
     }
 

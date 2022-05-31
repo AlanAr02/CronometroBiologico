@@ -20,9 +20,13 @@
 			<tr>
 				<th scope="col">ID</th>
 				<th scope="col">Nombre Paciente</th>
+				<th scope="col">Edad Paciente</th>
 				<th scope="col">Descripcion</th>
 				<th scope="col">Nombre del medico</th>
 				<th scope="col">Obra social</th>
+				<th scope="col">Recepcionista</th>
+				<th scope="col">Fecha del turno</th>
+				<th scope="col">Fecha de creacion</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -30,9 +34,13 @@
 				<tr>
 					<th scope="row">${consulta.id}</th>
 					<td>${consulta.nombrePaciente}</td>
+					<td>${consulta.edadPaciente}</td>
 					<td>${consulta.descripcion}</td>
 					<td>${consulta.medico.nombre}</td>
 					<td>${consulta.tieneObraSocialPaciente.nombre}</td>
+					<td>${consulta.nombreRecepcionista}</td>
+					<td>${consulta.fechaCreacion}</td>
+					<td>${consulta.fechaTurno}</td>
 				</tr>
 				</c:forEach>
 			</tbody>

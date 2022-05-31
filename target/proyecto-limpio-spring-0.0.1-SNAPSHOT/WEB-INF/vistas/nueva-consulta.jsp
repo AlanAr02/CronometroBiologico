@@ -19,7 +19,7 @@
                 </div>
                 <div class="form-group">
                     <label>Fecha que atendio</label>
-                    <!--<input type="date" class="form-control"  id="fechaCreacion" path="fechaCreacion" name="fechaCreacion">-->
+                    <input type="date" class="form-control"  id="fechaCreacion" path="fechaCreacion" name="fechaCreacion">
                 </div>
             </div>
             <div class="container">
@@ -49,7 +49,7 @@
                 <h1>Fecha turno</h1>
                 <div class="form-group">
                     <label>Fecha turno</label>
-                    <!-- <input type="date" class="form-control" id="fechaTurno" path="fechaTurno" name="fechaTurno"> -->
+                    <input type="date" class="form-control" id="fechaTurno" path="fechaTurno" name="fechaTurno">
                 </div>
             </div>
             <div class="container">
