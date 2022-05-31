@@ -31,4 +31,22 @@ public class HomeController {
         return new ModelAndView("home", model);
     }
 
+    @RequestMapping(path = "/medicos", method = RequestMethod.GET)
+    public ModelAndView irAMedicos() {
+        ModelMap model = new ModelMap();
+        List<Medico> medicos = servicioConsultas.traerMedicos();
+        model.put("medicos", medicos);
+
+        return new ModelAndView("medicos", model);
+    }
+
+    @RequestMapping(path = "/obras-sociales", method = RequestMethod.GET)
+    public ModelAndView irAObrasSociales() {
+        ModelMap model = new ModelMap();
+        List<ObraSociales> obrasocial = servicioConsultas.traerObrasSociales();
+        model.put("obrasociales", obrasocial);
+
+        return new ModelAndView("obras-sociales", model);
+    }
+
 }

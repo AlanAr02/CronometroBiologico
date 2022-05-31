@@ -11,4 +11,7 @@ public interface RepositorioConsulta {
     List<ObraSociales> getObraSociales();
 
     void save(Consultas consulta);
+    void saveMedico(Medico medico);
+
+    void saveObraSocial(ObraSociales obrasocial);
 }

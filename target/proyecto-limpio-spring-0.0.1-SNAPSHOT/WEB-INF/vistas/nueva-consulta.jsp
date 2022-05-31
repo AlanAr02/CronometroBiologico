@@ -8,6 +8,20 @@
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 <body>
+<header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="home">Consultas medicas</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="home">Volver a consultas</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Navbar -->
+</header>
 <div class = "container">
     <main>
         <form method="post" action="crear-consulta" modelAttribute="consultas">
@@ -53,14 +67,14 @@
                 </div>
             </div>
             <div class="container">
-                <h1>¿Que le paso al paciente?</h1>
+                <h1>Sintomas</h1>
                 <div class="form-group">
                     <label for="descripcion">Sintomas</label>
-                    <input type="text"  id="descripcion" path="descripcion" name="descripcion">
+                    <input type="text"  class="form-control"  id="descripcion" path="descripcion" name="descripcion">
                 </div>
             </div>
             <div class="container">
-                <h1>¿Tiene obra social?</h1>
+                <h1>Obra social</h1>
                 <div class="form-group">
                     <label for="tieneObraSocialPaciente.id">Seleccione obra social</label>
                     <select class="form-control" id="tieneObraSocialPaciente.id" path="tieneObraSocialPaciente.id" name="tieneObraSocialPaciente.id">

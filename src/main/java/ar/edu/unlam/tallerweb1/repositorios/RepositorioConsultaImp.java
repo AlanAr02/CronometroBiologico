@@ -47,4 +47,16 @@ public class RepositorioConsultaImp implements RepositorioConsulta {
         final Session session = sessionFactory.getCurrentSession();
         session.save(consulta);
     }
+
+    @Override
+    public void saveMedico(Medico medico) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.save(medico);
+    }
+
+    @Override
+    public void saveObraSocial(ObraSociales obrasocial) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.save(obrasocial);
+    }
 }

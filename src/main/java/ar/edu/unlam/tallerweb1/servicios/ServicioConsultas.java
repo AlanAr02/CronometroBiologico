@@ -14,4 +14,8 @@ public interface ServicioConsultas {
     List<ObraSociales> traerObrasSociales();
 
     void saveConsulta(Consultas consulta);
+
+    void saveMedico(Medico medico);
+
+    void saveObraSocial(ObraSociales obrasocial);
 }

@@ -13,6 +13,7 @@ public class Medico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
+    private String especialidad;
 
     public Long getId() {
         return id;
@@ -28,5 +29,13 @@ public class Medico {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
     }
 }

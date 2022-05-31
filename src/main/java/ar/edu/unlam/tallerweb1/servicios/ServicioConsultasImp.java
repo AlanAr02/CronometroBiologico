@@ -43,4 +43,14 @@ public class ServicioConsultasImp implements ServicioConsultas {
         repoConsulta.save(consulta);
     }
 
+    @Override
+    public void saveMedico(Medico medico) {
+        repoConsulta.saveMedico(medico);
+    }
+
+    @Override
+    public void saveObraSocial(ObraSociales obrasocial) {
+        repoConsulta.saveObraSocial(obrasocial);
+    }
+
 }
