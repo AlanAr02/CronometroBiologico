@@ -2,6 +2,8 @@ package ar.edu.unlam.tallerweb1.repositorios;
 
 import ar.edu.unlam.tallerweb1.modelo.Consultas;
 import ar.edu.unlam.tallerweb1.modelo.Medico;
+import ar.edu.unlam.tallerweb1.modelo.ObraSociales;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,5 +33,18 @@ public class RepositorioConsultaImp implements RepositorioConsulta {
         final Session session = sessionFactory.getCurrentSession();
         return (List<Medico>) session.createCriteria(Medico.class)
                 .list();
+    }
+
+    @Override
+    public List<ObraSociales> getObraSociales() {
+        final Session session = sessionFactory.getCurrentSession();
+        return (List<ObraSociales>) session.createCriteria(ObraSociales.class)
+                .list();
+    }
+
+    @Override
+    public void save(Consultas consulta) {
+        final Session session = sessionFactory.getCurrentSession();
+        session.save(consulta);
     }
 }

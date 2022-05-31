@@ -13,9 +13,36 @@ public class Consultas {
     private Date fechaTurno;
     private String descripcion;
     @ManyToOne
-    private Paciente paciente;
-    @ManyToOne
     private Medico medico;
+    private String nombrePaciente;
+    private int edadPaciente;
+    @ManyToOne
+    private ObraSociales tieneObraSocialPaciente;
+    private String nombreRecepcionista;
+
+    public String getNombrePaciente() {
+        return nombrePaciente;
+    }
+
+    public void setNombrePaciente(String nombrePaciente) {
+        this.nombrePaciente = nombrePaciente;
+    }
+
+    public int getEdadPaciente() {
+        return edadPaciente;
+    }
+
+    public void setEdadPaciente(int edadPaciente) {
+        this.edadPaciente = edadPaciente;
+    }
+
+    public ObraSociales getTieneObraSocialPaciente() {
+        return tieneObraSocialPaciente;
+    }
+
+    public void setTieneObraSocialPaciente(ObraSociales tieneObraSocialPaciente) {
+        this.tieneObraSocialPaciente = tieneObraSocialPaciente;
+    }
 
     public Long getId() {
         return id;
@@ -41,14 +68,6 @@ public class Consultas {
         this.fechaTurno = fechaTurno;
     }
 
-    public Paciente getPaciente() {
-        return paciente;
-    }
-
-    public void setPaciente(Paciente paciente) {
-        this.paciente = paciente;
-    }
-
     public Medico getMedico() {
         return medico;
     }
@@ -59,6 +78,14 @@ public class Consultas {
 
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public String getNombreRecepcionista() {
+        return nombreRecepcionista;
+    }
+
+    public void setNombreRecepcionista(String nombreRecepcionista) {
+        this.nombreRecepcionista = nombreRecepcionista;
     }
 
     public void setDescripcion(String descripcion) {

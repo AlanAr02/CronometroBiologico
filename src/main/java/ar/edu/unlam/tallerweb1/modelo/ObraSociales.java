@@ -4,17 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
 
 @Entity
-public class Paciente {
+public class ObraSociales {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
-    private Integer edad;
-    private Boolean tieneObraSocial;
 
     public Long getId() {
         return id;
@@ -30,21 +27,5 @@ public class Paciente {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public Integer getEdad() {
-        return edad;
-    }
-
-    public void setEdad(Integer edad) {
-        this.edad = edad;
-    }
-
-    public Boolean getTieneObraSocial() {
-        return tieneObraSocial;
-    }
-
-    public void setTieneObraSocial(Boolean tieneObraSocial) {
-        this.tieneObraSocial = tieneObraSocial;
     }
 }

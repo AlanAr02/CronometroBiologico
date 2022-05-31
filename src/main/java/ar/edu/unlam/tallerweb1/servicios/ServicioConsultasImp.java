@@ -2,6 +2,7 @@ package ar.edu.unlam.tallerweb1.servicios;
 
 import ar.edu.unlam.tallerweb1.modelo.Consultas;
 import ar.edu.unlam.tallerweb1.modelo.Medico;
+import ar.edu.unlam.tallerweb1.modelo.ObraSociales;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioConsulta;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioConsultaImp;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,16 @@ public class ServicioConsultasImp implements ServicioConsultas {
     @Override
     public List<Medico> traerMedicos() {
         return repoConsulta.getMedicos();
+    }
+
+    @Override
+    public List<ObraSociales> traerObrasSociales() {
+        return repoConsulta.getObraSociales();
+    }
+
+    @Override
+    public void saveConsulta(Consultas consulta) {
+        repoConsulta.save(consulta);
     }
 
 }

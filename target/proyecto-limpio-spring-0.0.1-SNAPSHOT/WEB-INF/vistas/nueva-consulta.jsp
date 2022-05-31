@@ -10,64 +10,64 @@
 <body>
 <div class = "container">
     <main>
-        <form>
+        <form method="post" action="crear-consulta" modelAttribute="consultas">
             <div class="container">
                 <h1>RECEPCIONISTA</h1>
                 <div class="form-group">
-                    <label for="exampleInputNameRecepcionista">Nombre y apellido</label>
-                    <input type="text" class="form-control" id="exampleInputNameRecepcionista" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="nombreRecepcionista">Nombre y apellido</label>
+                    <input type="text" class="form-control" id="nombreRecepcionista" path="nombreRecepcionista" name="nombreRecepcionista">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputDateFechaAtencion">Fecha que atendio</label>
-                    <input type="date" class="form-control" id="exampleInputDateFechaAtencion" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label>Fecha que atendio</label>
+                    <!--<input type="date" class="form-control"  id="fechaCreacion" path="fechaCreacion" name="fechaCreacion">-->
                 </div>
             </div>
             <div class="container">
                 <h1>PACIENTE</h1>
                 <div class="form-group">
-                    <label for="exampleInputNamePacient">Nombre y apellido</label>
-                    <input type="text" class="form-control" id="exampleInputNamePacient" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="nombrePaciente">Nombre y apellido</label>
+                    <input type="text" class="form-control" id="nombrePaciente" path="nombrePaciente" name="nombrePaciente">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputAgePacient">Edad</label>
-                    <input type="number" class="form-control" id="exampleInputAgePacient" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="edadPaciente">Edad</label>
+                    <input type="number" class="form-control"  id="edadPaciente" path="edadPaciente" name="edadPaciente">
                 </div>
             </div>
             <div class="container">
                 <h1>MEDICO</h1>
                 <div class="form-group">
-                    <label for="selectMedic">Medico</label>
-                    <select type="text" class="form-control" id="selectMedic" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label>Medico</label>
+                    <select class="form-control" id="medico.id" path="medico.id" name="medico.id">
                         <option selected>Seleccione una opcion</option>
                         <c:forEach var="medico" items="${medicos}">
                             <option value="${medico.id}">${medico.nombre}</option>
                         </c:forEach>
-
                     </select>
                 </div>
             </div>
             <div class="container">
                 <h1>Fecha turno</h1>
                 <div class="form-group">
-                    <label for="fechaTurno">Fecha turno</label>
-                    <input type="date" class="form-control" id="fechaTurno" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label>Fecha turno</label>
+                    <!-- <input type="date" class="form-control" id="fechaTurno" path="fechaTurno" name="fechaTurno"> -->
                 </div>
             </div>
             <div class="container">
                 <h1>¿Que le paso al paciente?</h1>
                 <div class="form-group">
-                    <label for="sintomas">Sintomas</label>
-                    <textarea type="text"  id="sintomas" aria-describedby="emailHelp" placeholder="Enter email"></textarea>
+                    <label for="descripcion">Sintomas</label>
+                    <input type="text"  id="descripcion" path="descripcion" name="descripcion">
                 </div>
             </div>
             <div class="container">
                 <h1>¿Tiene obra social?</h1>
                 <div class="form-group">
-                    <label>Seleccione obra social</label>
-                    <select type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
+                    <label for="tieneObraSocialPaciente.id">Seleccione obra social</label>
+                    <select class="form-control" id="tieneObraSocialPaciente.id" path="tieneObraSocialPaciente.id" name="tieneObraSocialPaciente.id">
                         <option selected>Seleccione una opcion</option>
-                        <option>No poseo obra social</option>
-                        <option>OSECAT</option>
+                        <c:forEach var="obrasocial" items="${obrasociales}">
+                            <option value="${obrasocial.id}">${obrasocial.nombre}</option>
+                        </c:forEach>
                     </select>
                 </div>
             </div>

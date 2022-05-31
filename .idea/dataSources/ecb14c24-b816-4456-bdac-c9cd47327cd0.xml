@@ -1030,124 +1030,143 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="289" parent="274" name="paciente">
+    <table id="289" parent="274" name="obrasociales">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="290" parent="274" name="usuario">
+    <table id="290" parent="274" name="paciente">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="291" parent="287" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <table id="291" parent="274" name="usuario">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="292" parent="287" name="id">
+      <AutoIncrement>7</AutoIncrement>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="292" parent="287" name="fechaCreacion">
+    <column id="293" parent="287" name="fechaCreacion">
       <DataType>datetime(6)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="293" parent="287" name="fechaTurno">
+    <column id="294" parent="287" name="fechaTurno">
       <DataType>datetime(6)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="294" parent="287" name="medico_id">
+    <column id="295" parent="287" name="medico_id">
       <DataType>bigint|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="295" parent="287" name="paciente_id">
+    <column id="296" parent="287" name="paciente_id">
       <DataType>bigint|0s</DataType>
       <Position>5</Position>
     </column>
-    <column id="296" parent="287" name="descripcion">
+    <column id="297" parent="287" name="descripcion">
       <DataType>varchar(255)|0s</DataType>
       <Position>6</Position>
     </column>
-    <foreign-key id="297" parent="287" name="FKkpj4j07t089mnaky9hgi79qty">
+    <foreign-key id="298" parent="287" name="FKkpj4j07t089mnaky9hgi79qty">
       <ColNames>medico_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>medico</RefTableName>
     </foreign-key>
-    <foreign-key id="298" parent="287" name="FKpuqq07t6ke9k17899puwwtkfr">
+    <foreign-key id="299" parent="287" name="FKpuqq07t6ke9k17899puwwtkfr">
       <ColNames>paciente_id</ColNames>
       <RefColNames>id</RefColNames>
       <RefTableName>paciente</RefTableName>
     </foreign-key>
-    <index id="299" parent="287" name="FKkpj4j07t089mnaky9hgi79qty">
+    <index id="300" parent="287" name="FKkpj4j07t089mnaky9hgi79qty">
       <ColNames>medico_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="300" parent="287" name="FKpuqq07t6ke9k17899puwwtkfr">
+    <index id="301" parent="287" name="FKpuqq07t6ke9k17899puwwtkfr">
       <ColNames>paciente_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="301" parent="287" name="PRIMARY">
+    <key id="302" parent="287" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="302" parent="288" name="id">
-      <AutoIncrement>1</AutoIncrement>
+    <column id="303" parent="288" name="id">
+      <AutoIncrement>5</AutoIncrement>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="303" parent="288" name="nombre">
+    <column id="304" parent="288" name="nombre">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
     </column>
-    <key id="304" parent="288" name="PRIMARY">
+    <key id="305" parent="288" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="305" parent="289" name="id">
+    <column id="306" parent="289" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-    </column>
-    <column id="306" parent="289" name="edad">
-      <DataType>int|0s</DataType>
-      <Position>2</Position>
     </column>
     <column id="307" parent="289" name="nombre">
       <DataType>varchar(255)|0s</DataType>
-      <Position>3</Position>
+      <Position>2</Position>
     </column>
-    <column id="308" parent="289" name="tieneObraSocial">
-      <DataType>bit(1)|0s</DataType>
-      <Position>4</Position>
-    </column>
-    <key id="309" parent="289" name="PRIMARY">
+    <key id="308" parent="289" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
     </key>
-    <column id="310" parent="290" name="id">
+    <column id="309" parent="290" name="id">
+      <AutoIncrement>2</AutoIncrement>
+      <DataType>bigint|0s</DataType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="310" parent="290" name="edad">
+      <DataType>int|0s</DataType>
+      <Position>2</Position>
+    </column>
+    <column id="311" parent="290" name="nombre">
+      <DataType>varchar(255)|0s</DataType>
+      <Position>3</Position>
+    </column>
+    <column id="312" parent="290" name="tieneObraSocial">
+      <DataType>bit(1)|0s</DataType>
+      <Position>4</Position>
+    </column>
+    <key id="313" parent="290" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+    </key>
+    <column id="314" parent="291" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DataType>bigint|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="311" parent="290" name="activo">
+    <column id="315" parent="291" name="activo">
       <DataType>bit(1)|0s</DataType>
       <Position>2</Position>
     </column>
-    <column id="312" parent="290" name="email">
+    <column id="316" parent="291" name="email">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
     </column>
-    <column id="313" parent="290" name="password">
+    <column id="317" parent="291" name="password">
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
     </column>
-    <column id="314" parent="290" name="rol">
+    <column id="318" parent="291" name="rol">
       <DataType>varchar(255)|0s</DataType>
       <Position>5</Position>
     </column>
-    <key id="315" parent="290" name="PRIMARY">
+    <key id="319" parent="291" name="PRIMARY">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
