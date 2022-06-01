@@ -22,12 +22,6 @@ public class ObrasSocialesControllerTest {
         servicioObraSocial = mock(ServicioObraSocial.class);
         obrasSocialesController = new ObrasSocialesController(servicioConsultas);
     }
-
-    @Test
-    public void asdasdsa (){
-
-    }
-
     @Test
     public void queSePuedaCrearUnaObraSocial(){
         ObraSociales creada= givenCreoUnaObraSocial("pepito");
