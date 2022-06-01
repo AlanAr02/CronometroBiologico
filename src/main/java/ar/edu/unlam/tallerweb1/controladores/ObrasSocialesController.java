@@ -1,6 +1,7 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
 import ar.edu.unlam.tallerweb1.modelo.ObraSocial;
+import ar.edu.unlam.tallerweb1.servicios.CampoVacioException;
 import ar.edu.unlam.tallerweb1.servicios.ServicioObraSocial;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,16 +37,20 @@ public class ObrasSocialesController {
     }
 
     @RequestMapping(path = "/crear-obrasocial", method = RequestMethod.POST)
-    public ModelAndView crearObraSocial(@ModelAttribute("obrassociales") ObraSocial creada) {
+    public ModelAndView crearObraSocial(@ModelAttribute("obrassociales") String nombreObraSocial) {
         ModelMap model = new ModelMap();
-        if(creada.getNombre()==null || creada.getNombre() == ""){
-
-            model.put("resultado", "la obra social no se creo");
-            return new ModelAndView("redirect:/nueva-obrasocial?faltanombre=true", model);
+        try{
+            servicioObraSocial.saveObraSocial(nombreObraSocial);
+        }catch (CampoVacioException e) {
+            model.put("error", "Para crear la Obra Social debe indicar su nombre");
+            return new ModelAndView("redirect:/nueva-obrasocial", model);
         }
-        servicioObraSocial.saveObraSocial(creada);
         model.put("resultado", "la obra social fue creada correctamente");
     return new ModelAndView("redirect:/obras-sociales", model);
+    }
+
+    private boolean elNombreEstaVacio(ObraSocial creada) {
+        return creada.getNombre() == null || creada.getNombre().isEmpty() || creada.getNombre().isBlank();
     }
 
    /* @RequestMapping(path = "/crear-obrasocial", method = RequestMethod.POST)

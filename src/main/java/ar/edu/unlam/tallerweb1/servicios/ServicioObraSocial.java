@@ -7,7 +7,7 @@ import java.util.List;
 public interface ServicioObraSocial {
 
 
-    void saveObraSocial(ObraSocial creada);
+    ObraSocial saveObraSocial(String nombre);
 
 
    ObraSocial buscarPor(Long id);

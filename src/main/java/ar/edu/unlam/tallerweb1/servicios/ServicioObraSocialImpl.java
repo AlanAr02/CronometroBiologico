@@ -12,8 +12,6 @@ import java.util.List;
 @Transactional
 public class ServicioObraSocialImpl implements ServicioObraSocial {
 
-
-
     private RepositorioObraSocial repoObraSocial;
 
     @Autowired
@@ -22,8 +20,11 @@ public class ServicioObraSocialImpl implements ServicioObraSocial {
     }
 
     @Override
-    public void saveObraSocial(ObraSocial creada) {
-        repoObraSocial.saveObraSocial(creada);
+    public ObraSocial saveObraSocial(String nombre) {
+        if(nombre == null || nombre.isEmpty() || nombre.isBlank()) throw new CampoVacioException();
+        ObraSocial obraSocial = new ObraSocial(nombre);
+        repoObraSocial.saveObraSocial(obraSocial);
+        return obraSocial;
     }
 
     @Override
