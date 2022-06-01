@@ -39,9 +39,9 @@ public class RepositorioObraSocialImpl implements RepositorioObraSocial{
     }
 
     @Override
-    public void saveObraSocial(ObraSocial obrasocial){
-            final Session session = sessionFactory.getCurrentSession();
-            session.save(obrasocial);
+    public Long saveObraSocial(ObraSocial obraSocial){
+            sessionFactory.getCurrentSession().save(obraSocial);
+            return obraSocial.getId();
         }
     }
 

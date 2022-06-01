@@ -13,6 +13,11 @@ public class ObraSocial {
     private Long id;
     private String nombre;
 
+    public ObraSocial(){}
+    public ObraSocial(String nombre){
+        this.nombre = nombre;
+    }
+
     public Long getId() {
         return id;
     }
