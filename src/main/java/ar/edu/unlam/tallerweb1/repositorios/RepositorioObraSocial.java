@@ -8,7 +8,7 @@ public interface RepositorioObraSocial {
 
     List<ObraSocial> getObraSociales();
 
-    void saveObraSocial(ObraSocial obrasocial);
+    Long saveObraSocial(ObraSocial nombre);
 
     ObraSocial buscarPor(Long id);
 
