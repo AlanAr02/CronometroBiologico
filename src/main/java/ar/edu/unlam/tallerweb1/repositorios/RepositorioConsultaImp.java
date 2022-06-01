@@ -2,8 +2,7 @@ package ar.edu.unlam.tallerweb1.repositorios;
 
 import ar.edu.unlam.tallerweb1.modelo.Consultas;
 import ar.edu.unlam.tallerweb1.modelo.Medico;
-import ar.edu.unlam.tallerweb1.modelo.ObraSociales;
-import org.hibernate.Criteria;
+import ar.edu.unlam.tallerweb1.modelo.ObraSocial;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +35,9 @@ public class RepositorioConsultaImp implements RepositorioConsulta {
     }
 
     @Override
-    public List<ObraSociales> getObraSociales() {
+    public List<ObraSocial> getObraSociales() {
         final Session session = sessionFactory.getCurrentSession();
-        return (List<ObraSociales>) session.createCriteria(ObraSociales.class)
+        return (List<ObraSocial>) session.createCriteria(ObraSocial.class)
                 .list();
     }
 
@@ -55,7 +54,7 @@ public class RepositorioConsultaImp implements RepositorioConsulta {
     }
 
     @Override
-    public void saveObraSocial(ObraSociales obrasocial) {
+    public void saveObraSocial(ObraSocial obrasocial) {
         final Session session = sessionFactory.getCurrentSession();
         session.save(obrasocial);
     }

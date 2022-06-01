@@ -27,6 +27,7 @@
         <form method="post" action="crear-obrasocial" modelAttribute="obrassociales">
             <div class="container">
                 <h1>Obra Social</h1>
+                <c:if test="${not empty faltanombre}" ><h2>falta el nombre</h2></c:if>
                 <div class="form-group">
                     <label for="nombre">Nombre de la obra social</label>
                     <input type="text" class="form-control" id="nombre" path="nombre" name="nombre">

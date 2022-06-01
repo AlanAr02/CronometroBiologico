@@ -2,9 +2,8 @@ package ar.edu.unlam.tallerweb1.servicios;
 
 import ar.edu.unlam.tallerweb1.modelo.Consultas;
 import ar.edu.unlam.tallerweb1.modelo.Medico;
-import ar.edu.unlam.tallerweb1.modelo.ObraSociales;
+import ar.edu.unlam.tallerweb1.modelo.ObraSocial;
 import ar.edu.unlam.tallerweb1.repositorios.RepositorioConsulta;
-import ar.edu.unlam.tallerweb1.repositorios.RepositorioConsultaImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,13 +12,13 @@ import java.util.List;
 
 @Service("servicioConsultas")
 @Transactional
-public class ServicioConsultasImp implements ServicioConsultas {
+public class ServicioConsultasImpl implements ServicioConsultas {
     //ESTO INYECTA UN OBJETO "REPOSITORIO CONSULTA" Y POR ENDE TRAE CON SIGO SUS RESPECTIVOS METODOS, VOY A PODER USAR TODOS LOS METODOS QUE HAYAN EN EL REPO
 
     private RepositorioConsulta repoConsulta;
 
     @Autowired
-    public ServicioConsultasImp(RepositorioConsulta repoConsulta) {
+    public ServicioConsultasImpl(RepositorioConsulta repoConsulta) {
         this.repoConsulta = repoConsulta;
     }
 
@@ -34,7 +33,7 @@ public class ServicioConsultasImp implements ServicioConsultas {
     }
 
     @Override
-    public List<ObraSociales> traerObrasSociales() {
+    public List<ObraSocial> traerObrasSociales() {
         return repoConsulta.getObraSociales();
     }
 
@@ -49,7 +48,7 @@ public class ServicioConsultasImp implements ServicioConsultas {
     }
 
     @Override
-    public void saveObraSocial(ObraSociales obrasocial) {
+    public void saveObraSocial(ObraSocial obrasocial) {
         repoConsulta.saveObraSocial(obrasocial);
     }
 

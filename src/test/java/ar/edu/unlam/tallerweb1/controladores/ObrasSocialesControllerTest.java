@@ -1,6 +1,6 @@
 package ar.edu.unlam.tallerweb1.controladores;
 
-import ar.edu.unlam.tallerweb1.modelo.ObraSociales;
+import ar.edu.unlam.tallerweb1.modelo.ObraSocial;
 import ar.edu.unlam.tallerweb1.servicios.ServicioConsultas;
 import ar.edu.unlam.tallerweb1.servicios.ServicioObraSocial;
 import org.junit.Before;
@@ -20,7 +20,7 @@ public class ObrasSocialesControllerTest {
     @Before
     public void init(){
         servicioObraSocial = mock(ServicioObraSocial.class);
-        obrasSocialesController = new ObrasSocialesController(servicioConsultas);
+        obrasSocialesController = new ObrasSocialesController(servicioObraSocial);
     }
 
     @Test
@@ -30,18 +30,18 @@ public class ObrasSocialesControllerTest {
 
     @Test
     public void queSePuedaCrearUnaObraSocial(){
-        ObraSociales creada= givenCreoUnaObraSocial("pepito");
+        ObraSocial creada= givenCreoUnaObraSocial("pepito");
         Long id = whenGuardoUnaObraSocial(creada);
         thenEstaLaObraSocial(id);
     }
 
     private void thenEstaLaObraSocial(Long id) {
-        assertThat(mav.getViewName()).isEqualTo("obras-sociales");
+        assertThat(mav.getViewName()).isEqualTo("redirect:/obras-sociales");
         assertThat(servicioObraSocial.buscarPor(id));
-    assertThat(mav.getModel().get("resultado")).isEqualTo("la obra social fue creada correctamente");
+        assertThat(mav.getModel().get("resultado")).isEqualTo("la obra social fue creada correctamente");
     }
 
-    private Long whenGuardoUnaObraSocial(ObraSociales creada) {
+    private Long whenGuardoUnaObraSocial(ObraSocial creada) {
        Long aux=null;
         if(creada.getNombre()!=null){
         mav = obrasSocialesController.crearObraSocial(creada);
@@ -50,8 +50,8 @@ public class ObrasSocialesControllerTest {
         return aux;
     }
 
-    private ObraSociales givenCreoUnaObraSocial(String nombre) {
-        ObraSociales creada= new ObraSociales();
+    private ObraSocial givenCreoUnaObraSocial(String nombre) {
+        ObraSocial creada= new ObraSocial();
         creada.setNombre(nombre);
         return creada;
     }

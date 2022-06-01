@@ -1,14 +1,16 @@
 package ar.edu.unlam.tallerweb1.repositorios;
 
-import ar.edu.unlam.tallerweb1.modelo.ObraSociales;
+import ar.edu.unlam.tallerweb1.modelo.ObraSocial;
 
 import java.util.List;
 
 public interface RepositorioObraSocial {
 
-    List<ObraSociales> getObraSociales();
+    List<ObraSocial> getObraSociales();
 
-    void saveObraSocial(ObraSociales obrasocial);
+    void saveObraSocial(ObraSocial obrasocial);
 
-    ObraSociales buscarPor(Long id);
+    ObraSocial buscarPor(Long id);
+
+    List<ObraSocial> buscarTodas();
 }

@@ -1,7 +1,6 @@
 package ar.edu.unlam.tallerweb1.modelo;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 public class Consultas {
@@ -17,7 +16,7 @@ public class Consultas {
     private String nombrePaciente;
     private int edadPaciente;
     @ManyToOne
-    private ObraSociales tieneObraSocialPaciente;
+    private ObraSocial tieneObraSocialPaciente;
     private String nombreRecepcionista;
 
     public String getNombrePaciente() {
@@ -36,11 +35,11 @@ public class Consultas {
         this.edadPaciente = edadPaciente;
     }
 
-    public ObraSociales getTieneObraSocialPaciente() {
+    public ObraSocial getTieneObraSocialPaciente() {
         return tieneObraSocialPaciente;
     }
 
-    public void setTieneObraSocialPaciente(ObraSociales tieneObraSocialPaciente) {
+    public void setTieneObraSocialPaciente(ObraSocial tieneObraSocialPaciente) {
         this.tieneObraSocialPaciente = tieneObraSocialPaciente;
     }
 

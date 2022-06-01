@@ -1,7 +1,6 @@
 package ar.edu.unlam.tallerweb1.controladores;
 import ar.edu.unlam.tallerweb1.modelo.Consultas;
 import ar.edu.unlam.tallerweb1.modelo.Medico;
-import ar.edu.unlam.tallerweb1.modelo.ObraSociales;
 import ar.edu.unlam.tallerweb1.servicios.ServicioConsultas;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,7 +38,7 @@ public class HomeController {
 
         return new ModelAndView("medicos", model);
     }
-
+/*
     @RequestMapping(path = "/obras-sociales", method = RequestMethod.GET)
     public ModelAndView irAObrasSociales() {
         ModelMap model = new ModelMap();
@@ -48,5 +47,5 @@ public class HomeController {
 
         return new ModelAndView("obras-sociales", model);
     }
-
+*/
 }

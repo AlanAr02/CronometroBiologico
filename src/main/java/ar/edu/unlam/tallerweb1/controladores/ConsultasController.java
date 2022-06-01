@@ -2,9 +2,8 @@ package ar.edu.unlam.tallerweb1.controladores;
 
 import ar.edu.unlam.tallerweb1.modelo.Consultas;
 import ar.edu.unlam.tallerweb1.modelo.Medico;
-import ar.edu.unlam.tallerweb1.modelo.ObraSociales;
+import ar.edu.unlam.tallerweb1.modelo.ObraSocial;
 import ar.edu.unlam.tallerweb1.servicios.ServicioConsultas;
-import ar.edu.unlam.tallerweb1.servicios.ServicioConsultasImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -30,7 +29,7 @@ public class ConsultasController {
     public ModelAndView irANuevaConsulta() {
         ModelMap model = new ModelMap();
         List<Medico> medicos = servicioConsultas.traerMedicos();
-        List<ObraSociales> obrasociales = servicioConsultas.traerObrasSociales();
+        List<ObraSocial> obrasociales = servicioConsultas.traerObrasSociales();
         model.put("obrasociales", obrasociales);
         model.put("medicos", medicos);
         return new ModelAndView("nueva-consulta", model);

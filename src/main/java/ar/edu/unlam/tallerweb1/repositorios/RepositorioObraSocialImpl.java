@@ -1,6 +1,6 @@
 package ar.edu.unlam.tallerweb1.repositorios;
 
-import ar.edu.unlam.tallerweb1.modelo.ObraSociales;
+import ar.edu.unlam.tallerweb1.modelo.ObraSocial;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +22,24 @@ public class RepositorioObraSocialImpl implements RepositorioObraSocial{
 
 
     @Override
-    public List<ObraSociales> getObraSociales()  {
+    public List<ObraSocial> getObraSociales()  {
         final Session session = sessionFactory.getCurrentSession();
-        return (List<ObraSociales>) session.createCriteria(ObraSociales.class)
+        return (List<ObraSocial>) session.createCriteria(ObraSocial.class)
                 .list();
     }
 
     @Override
-    public ObraSociales buscarPor(Long id) {
-        return sessionFactory.getCurrentSession().get(ObraSociales.class, id);
+    public ObraSocial buscarPor(Long id) {
+        return sessionFactory.getCurrentSession().get(ObraSocial.class, id);
     }
 
     @Override
-    public void saveObraSocial(ObraSociales obrasocial){
+    public List<ObraSocial> buscarTodas() {
+        return sessionFactory.getCurrentSession().createCriteria(ObraSocial.class).list();
+    }
+
+    @Override
+    public void saveObraSocial(ObraSocial obrasocial){
             final Session session = sessionFactory.getCurrentSession();
             session.save(obrasocial);
         }
