@@ -40,7 +40,13 @@
             </tr>
             </thead>
             <tbody>
-            <!--ACA TIENE QUE TRAER LOS DATOS DE LOS MEDICOS, O SEA ID, NOMBRE DEL MEDICO Y ESPECIALIDAD-->
+            <c:forEach var="medicos" items="${medicos}">
+                <tr>
+                    <th scope="row">${medicos.id}</th>
+                    <td>${medicos.nombre}</td>
+                    <td>${medicos.especialidad}</td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </main>

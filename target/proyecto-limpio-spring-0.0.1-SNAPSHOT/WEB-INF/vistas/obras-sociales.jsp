@@ -39,7 +39,12 @@
             </tr>
             </thead>
             <tbody>
-              <!--ACA TIENE QUE TRAER LOS DATOS DE LA OBRA SOCIAL, O SEA ID Y NOMBRE DE LA OBRA SOCIAL-->
+            <c:forEach var="obrasociales" items="${obrasociales}">
+                <tr>
+                    <th scope="row">${obrasociales.id}</th>
+                    <td>${obrasociales.nombre}</td>
+                </tr>
+            </c:forEach>
             </tbody>
         </table>
     </main>
