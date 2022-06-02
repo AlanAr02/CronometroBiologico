@@ -32,7 +32,7 @@ public class ObrasSocialesControllerTest {
     private void thenEstaLaObraSocial(Long id) {
         assertThat(mav.getViewName()).isEqualTo("obras-sociales");
         assertThat(servicioObraSocial.buscarPor(id));
-    assertThat(mav.getModel().get("resultado")).isEqualTo("la obra social fue creada correctamente");
+        assertThat(mav.getModel().get("resultado")).isEqualTo("la obra social fue creada correctamente");
     }
 
     private Long whenGuardoUnaObraSocial(ObraSociales creada) {

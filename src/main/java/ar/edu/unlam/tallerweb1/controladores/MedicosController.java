@@ -5,6 +5,7 @@ import ar.edu.unlam.tallerweb1.modelo.Medico;
 import ar.edu.unlam.tallerweb1.modelo.ObraSociales;
 import ar.edu.unlam.tallerweb1.servicios.ServicioConsultas;
 import ar.edu.unlam.tallerweb1.servicios.ServicioConsultasImp;
+import ar.edu.unlam.tallerweb1.servicios.ServicioMedico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,13 +19,12 @@ import java.util.List;
 @Controller
 public class MedicosController {
 
-    private ServicioConsultas servicioConsultas;
+    private ServicioMedico servicioMedico;
 
     @Autowired
-    public MedicosController(ServicioConsultas servicioConsultas) {
-        this.servicioConsultas = servicioConsultas;
+    public MedicosController(ServicioMedico servicioMedico) {
+        this.servicioMedico = servicioMedico;
     }
-
 
     @RequestMapping(path = "/nuevo-medico", method = RequestMethod.GET)
     public ModelAndView irANuevoMedico() {
@@ -33,7 +33,11 @@ public class MedicosController {
 
     @RequestMapping(path = "/crear-medico", method = RequestMethod.POST)
     public ModelAndView crearMedico(@ModelAttribute("medicos") Medico medico) {
-        servicioConsultas.saveMedico(medico);
-        return new ModelAndView("redirect:/medicos");
+        servicioMedico.guardarMedico(medico);
+        ModelMap model = new ModelMap();
+        if(medico.getNombre()!=null || medico.getNombre()!=""){
+            model.put("resultado", "medico creado exitosamente");
+        }
+        return new ModelAndView("redirect:/medicos", model);
     }
 }
