@@ -20,7 +20,7 @@ public class ObrasSocialesControllerTest {
     @Before
     public void init(){
         servicioObraSocial = mock(ServicioObraSocial.class);
-        obrasSocialesController = new ObrasSocialesController(servicioConsultas);
+        obrasSocialesController = new ObrasSocialesController(servicioObraSocial);
     }
     @Test
     public void queSePuedaCrearUnaObraSocial(){
@@ -30,14 +30,14 @@ public class ObrasSocialesControllerTest {
     }
 
     private void thenEstaLaObraSocial(Long id) {
-        assertThat(mav.getViewName()).isEqualTo("obras-sociales");
+        assertThat(mav.getViewName()).isEqualTo("redirect:/obras-sociales");
         assertThat(servicioObraSocial.buscarPor(id));
         assertThat(mav.getModel().get("resultado")).isEqualTo("la obra social fue creada correctamente");
     }
 
     private Long whenGuardoUnaObraSocial(ObraSociales creada) {
        Long aux=null;
-        if(creada.getNombre()!=null){
+        if(creada.getNombre() !=null){
         mav = obrasSocialesController.crearObraSocial(creada);
        servicioObraSocial.saveObraSocial(creada);
        aux = creada.getId();}
